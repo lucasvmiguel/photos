@@ -17,7 +17,7 @@ Make sure you have a working Node environment.
 
 To install photos, simply run:
 
-```
+```bash
 git clone https://github.com/lucasvmiguel/photos.git
 cd photos
 npm install
@@ -25,21 +25,21 @@ npm install
 
 ## Installation
 
-Run project with [Expo](https://expo.io/)
+Run project with [Expo](https://expo.io/):
 
-```
+```bash
 npm start
 ```
 
-Run project with Android
+Run project with Android:
 
-```
+```bash
 npm start android
 ```
 
-Run project with IOS
+Run project with IOS:
 
-```
+```bash
 npm start android
 ```
 
@@ -47,7 +47,7 @@ npm start android
 
 command:
 
-```
+```bash
 $ npm test
 ```
 
@@ -55,7 +55,7 @@ $ npm test
 
 config.js
 
-```
+```js
 export default {
   apis: {
     photo: "https://jsonplaceholder.typicode.com/photos"
