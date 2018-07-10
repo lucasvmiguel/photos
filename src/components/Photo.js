@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import {
   Dimensions,
   Image,
@@ -17,7 +16,7 @@ const BASE_PADDING = 10;
 
 const Photo = ({ title, imageUrl }) => {
   return (
-    <ScrollView>
+    <React.Fragment>
       <Lightbox>
         <Image
           style={styles.contain}
@@ -30,7 +29,7 @@ const Photo = ({ title, imageUrl }) => {
       <View style={styles.text}>
         <Text style={styles.title}>{title}</Text>
       </View>
-    </ScrollView>
+    </React.Fragment>
   );
 };
 
@@ -42,8 +41,7 @@ Photo.propTypes = {
 const styles = StyleSheet.create({
   contain: {
     flex: 1,
-    height: WINDOW_WIDTH,
-    textAlign: "center"
+    height: WINDOW_WIDTH
   },
   text: {
     paddingTop: -20,

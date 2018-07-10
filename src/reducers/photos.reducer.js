@@ -1,3 +1,5 @@
+import { REHYDRATE } from "redux-persist";
+
 import {
   FETCH_PHOTOS_REQUEST,
   FETCH_PHOTOS_SUCCESS,
@@ -28,6 +30,12 @@ const photosReducer = (state = _initialState, action) => {
       return {
         ...state,
         error: action.error,
+        loading: false
+      };
+    case REHYDRATE:
+      return {
+        ...state,
+        photos: action.payload.photos,
         loading: false
       };
     default:

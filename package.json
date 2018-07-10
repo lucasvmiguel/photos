@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "fetch-mock": "^6.5.0",
     "jest-expo": "~27.0.0",
+    "react-dom": "^16.4.1",
     "react-native-scripts": "1.14.0",
     "react-test-renderer": "16.3.1",
     "redux-mock-store": "^1.5.3"
@@ -18,7 +21,10 @@
     "test": "jest"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "setupFiles": [
+      "<rootDir>/setup-tests.js"
+    ]
   },
   "dependencies": {
     "expo": "^27.0.1",
@@ -28,6 +34,7 @@
     "react-native-lightbox": "^0.7.0",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
+    "redux-persist": "^5.10.0",
     "redux-thunk": "^2.3.0"
   }
 }

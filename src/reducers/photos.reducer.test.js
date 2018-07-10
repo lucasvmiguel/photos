@@ -1,3 +1,5 @@
+import { REHYDRATE } from "redux-persist";
+
 import {
   FETCH_PHOTOS_REQUEST,
   FETCH_PHOTOS_SUCCESS,
@@ -47,6 +49,20 @@ describe("photosReducer tests", () => {
       loading: false,
       error: "error",
       photos: ["a", "b"]
+    };
+
+    expect(photosReducer(state, action)).toMatchObject(expected);
+  });
+
+  it("FETCH_PHOTOS_FAILURE action in reducer", () => {
+    const state = {
+      ..._initialState,
+      photos: ["a", "b"]
+    };
+    const action = { type: REHYDRATE, payload: { photos: ["a", "b", "c"] } };
+    const expected = {
+      ..._initialState,
+      photos: ["a", "b", "c"]
     };
 
     expect(photosReducer(state, action)).toMatchObject(expected);

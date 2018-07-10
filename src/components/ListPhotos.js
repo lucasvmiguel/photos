@@ -1,20 +1,28 @@
 import React, { Fragment } from "react";
-
-import { Text, View, FlatList, StyleSheet } from "react-native";
+import {
+  Text,
+  View,
+  FlatList,
+  StyleSheet,
+  ActivityIndicator,
+  ScrollView
+} from "react-native";
 import PropTypes from "prop-types";
 
 import Photo from "./Photo";
+import Loading from "./Loading";
 
 const ListPhotos = ({ photos, loading, error }) => {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
+      {loading && <Loading />}
       <FlatList
         data={photos}
         renderItem={({ item }) => (
           <Photo key={item.id} imageUrl={item.url} title={item.title} />
         )}
       />
-    </View>
+    </ScrollView>
   );
 };
 
@@ -29,6 +37,11 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#f0f0f0",
     alignSelf: "stretch"
+  },
+  loading: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center"
   }
 });
 
