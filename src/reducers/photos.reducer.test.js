@@ -54,12 +54,15 @@ describe("photosReducer tests", () => {
     expect(photosReducer(state, action)).toMatchObject(expected);
   });
 
-  it("FETCH_PHOTOS_FAILURE action in reducer", () => {
+  it("REHYDRATE action in reducer", () => {
     const state = {
       ..._initialState,
       photos: ["a", "b"]
     };
-    const action = { type: REHYDRATE, payload: { photos: ["a", "b", "c"] } };
+    const action = {
+      type: REHYDRATE,
+      payload: { photosReducer: { photos: ["a", "b", "c"] } }
+    };
     const expected = {
       ..._initialState,
       photos: ["a", "b", "c"]
