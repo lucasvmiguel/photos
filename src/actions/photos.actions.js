@@ -4,6 +4,9 @@ export const FETCH_PHOTOS_REQUEST = "FETCH_PHOTOS_REQUEST";
 export const FETCH_PHOTOS_SUCCESS = "FETCH_PHOTOS_SUCCESS";
 export const FETCH_PHOTOS_FAILURE = "FETCH_PHOTOS_FAILURE";
 
+/**
+ * Fetch all photos from an API.
+ */
 export const fetchPhotos = () => (dispatch, getState) => {
   dispatch(_fetchPhotosStart());
 

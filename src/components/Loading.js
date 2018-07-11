@@ -1,6 +1,9 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { View, StyleSheet, ActivityIndicator } from "react-native";
 
+/**
+ * Loading spinner
+ */
 const Loading = () => {
   return (
     <View style={styles.loading}>

@@ -23,21 +23,21 @@ cd photos
 npm install
 ```
 
-## Installation
+## Run
 
-Run project with [Expo](https://expo.io/):
+Run the project with [Expo](https://expo.io/):
 
 ```bash
 npm start
 ```
 
-Run project with Android:
+Run the project with Android:
 
 ```bash
 npm start android
 ```
 
-Run project with IOS:
+Run the project with IOS:
 
 ```bash
 npm start android

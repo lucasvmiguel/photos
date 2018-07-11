@@ -1,28 +1,30 @@
 import React, { Fragment } from "react";
-import {
-  Text,
-  View,
-  FlatList,
-  StyleSheet,
-  ActivityIndicator,
-  ScrollView
-} from "react-native";
+import { View, FlatList, StyleSheet, ScrollView } from "react-native";
 import PropTypes from "prop-types";
 
 import Photo from "./Photo";
 import Loading from "./Loading";
 
+/**
+ * Render the loading spinner and render a photo component for each photo in array of photos
+ */
 const ListPhotos = ({ photos, loading, error }) => {
   return (
-    <ScrollView style={styles.container}>
-      {loading && <Loading />}
-      <FlatList
-        data={photos}
-        renderItem={({ item }) => (
-          <Photo key={item.id} imageUrl={item.url} title={item.title} />
-        )}
-      />
-    </ScrollView>
+    <Fragment>
+      {loading && (
+        <View style={styles.loadingContainer}>
+          <Loading />
+        </View>
+      )}
+      <ScrollView style={styles.listContainer}>
+        <FlatList
+          data={photos}
+          renderItem={({ item }) => (
+            <Photo key={item.id} imageUrl={item.url} title={item.title} />
+          )}
+        />
+      </ScrollView>
+    </Fragment>
   );
 };
 
@@ -33,15 +35,12 @@ ListPhotos.propTypes = {
 };
 
 const styles = StyleSheet.create({
-  container: {
+  listContainer: {
     flex: 1,
-    backgroundColor: "#f0f0f0",
     alignSelf: "stretch"
   },
-  loading: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center"
+  loadingContainer: {
+    height: 50
   }
 });
 

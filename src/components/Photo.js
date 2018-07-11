@@ -1,19 +1,14 @@
-import React, { Component } from "react";
-import {
-  Dimensions,
-  Image,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View
-} from "react-native";
+import React from "react";
+import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
 import Lightbox from "react-native-lightbox";
 import PropTypes from "prop-types";
 
 const WINDOW_WIDTH = Dimensions.get("window").width;
 const BASE_PADDING = 10;
 
+/**
+ * Render the image with the title, image clickable (full-screen)
+ */
 const Photo = ({ title, imageUrl }) => {
   return (
     <React.Fragment>
@@ -44,7 +39,6 @@ const styles = StyleSheet.create({
     height: WINDOW_WIDTH
   },
   text: {
-    paddingTop: -20,
     paddingBottom: 20,
     marginVertical: 20
   },

@@ -20,24 +20,34 @@ const photosReducer = (state = _initialState, action) => {
         error: null,
         loading: true
       };
+
     case FETCH_PHOTOS_SUCCESS:
       return {
         ...state,
         photos: action.photos,
         loading: false
       };
+
     case FETCH_PHOTOS_FAILURE:
       return {
         ...state,
         error: action.error,
         loading: false
       };
+
     case REHYDRATE:
-      return {
-        ...state,
-        photos: action.payload.photos,
-        loading: false
-      };
+      const incoming = action.payload;
+
+      if (incoming) {
+        return {
+          ...state,
+          photos: incoming.photosReducer.photos,
+          loading: false
+        };
+      }
+
+      return { ...state };
+
     default:
       return state;
   }

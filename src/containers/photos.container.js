@@ -16,10 +16,10 @@ class PhotosContainer extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  photos: state.photosReducer.photos,
-  loading: state.photosReducer.loading,
-  error: state.photosReducer.error
+const mapStateToProps = ({ photosReducer }) => ({
+  photos: photosReducer.photos,
+  loading: photosReducer.loading,
+  error: photosReducer.error
 });
 
 const mapDispatchToProps = {
